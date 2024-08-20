@@ -34,9 +34,9 @@ export class AuthorizationController {
 				body.email,
 				body.password
 			);
-			this.EmailService.sendActivationMail(
+			await this.EmailService.sendActivationMail(
 				new_user.email,
-				`${process.env.SERVER_URL}/api/users/activate/` + new_user.activation_link
+				`${process.env.SERVER_URL}/api/users/activate/${new_user.activation_link}`
 			);
 		} catch (error) {
 			throw new HttpException({ message: error.message }, HttpStatus.UNAUTHORIZED);

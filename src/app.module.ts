@@ -6,6 +6,7 @@ import { CategoriesModule } from './categories/categories.module';
 import { EmailModule } from './email/email.module';
 import { TasksModule } from './tasks/tasks.module';
 import { UsersModule } from './users/users.module';
+import { ChatGateway } from './chat/chat.gateway';
 
 @Module({
 	imports: [
@@ -19,5 +20,6 @@ import { UsersModule } from './users/users.module';
 		UsersModule,
 		TasksModule,
 	],
+	providers: [ChatGateway],
 })
 export class AppModule {}
